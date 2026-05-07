@@ -1,0 +1,15 @@
+.scene {
+  display: flex;
+  gap: 60px;
+  align-self: center;
+  height: 90vh;
+  justify-self: center;
+}
+
+.indicators {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  width: 90vw;
+  font-size: 24px;
+}

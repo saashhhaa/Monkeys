@@ -1,0 +1,53 @@
+.monkeyGallery {
+  position: fixed;
+  /* inset: 0; */
+  z-index: 30000;
+  background-color: white;
+  border: 1.5px solid black;
+  padding: 60px 70px;
+  display: flex;
+  right: 60px;
+  font-size: 16px;
+  gap: 20px;
+  min-width: 70vw;
+}
+
+.monkeyGallery .close {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  margin-left: -5vw;
+  width: fit-content;
+}
+
+
+.monkeyGallery .descr{
+border: 1.5px solid black;
+  padding: 10px 40px;
+  min-height: 250px;
+  text-align: center;
+}
+
+.monkeyGallery .descr h2 {
+    font-size: 14px;
+}
+
+.monkeyGallery .monkeyCard img {
+  width: 70px;
+}
+
+.monkeyGallery .ecip {
+    height: fit-content;
+    background-color: black;
+    color: white;
+    position: absolute;
+    right: 10px;
+    align-self: flex-end;
+}
+
+.monkeyGallery .count {
+    background-color: black;
+    color: white;
+    width: 100%;
+
+}
