@@ -1,0 +1,27 @@
+.monkey {
+    width: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 1;
+    justify-content: center;
+}
+
+.monkey img {
+    width: 80px;
+    height: auto;
+}
+
+.monkeyCard {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.monkey_name {
+    opacity: 0;
+}
+
+.monkey:hover .monkey_name {
+    opacity: 1;
+}

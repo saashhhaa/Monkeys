@@ -1,0 +1,45 @@
+.user {
+}
+
+.user button {
+  border: 1.5px black solid;
+  padding: 10px 20px;
+  background-color: white;
+  width: 250px;
+  text-align: right;
+  cursor: pointer;
+}
+
+.userLink {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    justify-content: end;
+    font-size: 24px;
+}
+
+.userLink img {
+    height: 57px;
+    border: 1.5px black solid;
+}
+.userLink:hover {
+    background-color: black;
+  color: white;
+}
+
+.userMenu {
+  margin-top: 20px;
+}
+
+.userMenu button {
+  background-color: black;
+  color: white;
+  border-top: 1.5px solid rgb(255, 255, 255);
+}
+
+.userMenu button:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border-top: 1.5px solid rgb(0, 0, 0);
+}
+

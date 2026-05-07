@@ -1,0 +1,46 @@
+
+.startMenu {
+    position: absolute;
+    background-color: black;
+    inset: 0;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+
+.startMenu h1 {
+    color: white;
+    font-size: 64px;
+    animation: jumpTitle 1s infinite;
+    
+}
+
+.startMenu button {
+    background-color: black;
+    border: 1.5px white solid;
+    color: white;
+    padding: 20px 0;
+    width: 100%;
+    border-left: none;
+    border-right: none;
+}
+
+.startMenu button:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+@keyframes jumpTitle {
+    0% {
+        transform: rotate(-25deg);
+    }
+    50% {
+        transform: rotate(25deg);
+    }
+    100% {
+        transform: rotate(-25deg);
+    }
+}
