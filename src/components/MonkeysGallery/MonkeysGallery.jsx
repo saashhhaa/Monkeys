@@ -73,7 +73,7 @@ export const MonkeysGallery = ({ setGalleryVisible }) => {
               {mon.level == 0 && <div className="red">-5</div>}
               {mon.level == 1 && <div className="red">-10</div>}
               {mon.level > 1 && <div className="red">-{10 * mon.level}</div>}
-              <button disabled={currentUser.money < 5} className="ecip" onClick={() => equip(mon)}>
+              <button disabled={currentUser.money < 5 || currentUser.money < mon.level*10} className="ecip" onClick={() => equip(mon)}>
                 +1
               </button>
             </div>
