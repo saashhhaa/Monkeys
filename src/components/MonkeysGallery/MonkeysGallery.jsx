@@ -6,9 +6,12 @@ export const MonkeysGallery = ({ setGalleryVisible }) => {
   const { monkeys, setMonkeys, setCurrentUser, currentUser } = useContext(ItemsPortal);
 
   const equip = (monkey) => {
-    const idToUpgrade = monkey.ids[0]; // берём первую
-
-    setMonkeys((prev) =>
+    const idToUpgrade = monkey.ids[0];
+    if(currentUser.money<5){
+      return
+    }
+    else {
+      setMonkeys((prev) =>
       prev.map((mon) =>
         mon.id === idToUpgrade ? { ...mon, level: mon.level + 1 } : mon,
       ),
@@ -30,6 +33,9 @@ export const MonkeysGallery = ({ setGalleryVisible }) => {
       }));
     }
   };
+    }
+
+    
 
   const groupedMap = new Map();
 
@@ -67,7 +73,7 @@ export const MonkeysGallery = ({ setGalleryVisible }) => {
               {mon.level == 0 && <div className="red">-5</div>}
               {mon.level == 1 && <div className="red">-10</div>}
               {mon.level > 1 && <div className="red">-{10 * mon.level}</div>}
-              <button disabled={currentUser.money < mon.level*10} className="ecip" onClick={() => equip(mon)}>
+              <button disabled={currentUser.money < 5} className="ecip" onClick={() => equip(mon)}>
                 +1
               </button>
             </div>
