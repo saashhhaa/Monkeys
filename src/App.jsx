@@ -67,7 +67,7 @@ function App() {
 
   return (
     <ItemsPortal.Provider
-      value={{ monkeys, setMonkeys, currentUser, setCurrentUser }}
+      value={{ monkeys, setMonkeys, currentUser, setCurrentUser}}
     >
       {visible ? (
         <StartMenu setVisible={setVisible} setCurrentUser={setCurrentUser} />

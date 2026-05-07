@@ -5,22 +5,22 @@ import { MonkeysGallery } from "../MonkeysGallery/MonkeysGallery";
 
 export const User = () => {
   const { currentUser } = useContext(ItemsPortal);
-  const [visible, setVisible] = useState(false);
-  const [visible1, setVisible1] = useState(false);
+  const [userMenuVisible, setUserMenuVisible] = useState(false);
+  const [galleryVisible, setGalleryVisible] = useState(false);
 
   return (
     <div className="user">
-      <button onClick={() => setVisible(true)} className="userLink">
+      <button onClick={() => setUserMenuVisible(true)} className="userLink">
         <p>{currentUser.name}</p>
         <img src={currentUser.img} alt="" />
       </button>
-      {visible && (
+      {userMenuVisible && (
         <div className="userMenu">
           <button>Профиль</button> <br />
-          <button onClick={()=>setVisible1(true)}>Бибизяны</button>
+          <button onClick={()=>setGalleryVisible(true)}>Бибизяны</button>
         </div>
       )}
-    {visible1 && <MonkeysGallery setVisible1={setVisible1}/>}
+    {galleryVisible && <MonkeysGallery setGalleryVisible={setGalleryVisible}/>}
       
     </div>
   );
