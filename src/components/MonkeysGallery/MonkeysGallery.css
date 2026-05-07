@@ -38,11 +38,9 @@ border: 1.5px solid black;
 
 .monkeyGallery .ecip {
     height: fit-content;
+    width: fit-content;
     background-color: black;
     color: white;
-    position: absolute;
-    right: 10px;
-    align-self: flex-end;
 }
 
 .monkeyGallery .count {
@@ -50,4 +48,21 @@ border: 1.5px solid black;
     color: white;
     width: 100%;
 
+}
+
+.monkeyGallery .cover {
+  display: flex;
+  align-items: center;
+  /* width: 100%; */
+  justify-content: space-between;
+}
+
+.monkeyGallery .red {
+  color: red;
+}
+
+.monkeyGallery button:disabled {
+  background-color: rgb(214, 214, 214);
+  border-color: rgb(175, 175, 175);
+  cursor: not-allowed;
 }

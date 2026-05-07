@@ -1,9 +1,35 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { ItemsPortal } from "../../portal";
 import "./MonkeysGallery.css";
 
-export const MonkeysGallery = ({ setVisible1 }) => {
-  const { monkeys } = useContext(ItemsPortal);
+export const MonkeysGallery = ({ setGalleryVisible }) => {
+  const { monkeys, setMonkeys, setCurrentUser, currentUser } = useContext(ItemsPortal);
+
+  const equip = (monkey) => {
+    const idToUpgrade = monkey.ids[0]; // берём первую
+
+    setMonkeys((prev) =>
+      prev.map((mon) =>
+        mon.id === idToUpgrade ? { ...mon, level: mon.level + 1 } : mon,
+      ),
+    );
+    if (monkey.level === 0) {
+      setCurrentUser((user) => ({
+        ...user,
+        money: user.money - 5,
+      }));
+    } else if (monkey.level === 1) {
+      setCurrentUser((user) => ({
+        ...user,
+        money: user.money - 10,
+      }));
+    } else {
+      setCurrentUser((user) => ({
+        ...user,
+        money: user.money - 10 * monkey.level,
+      }));
+    }
+  };
 
   const groupedMap = new Map();
 
@@ -19,25 +45,35 @@ export const MonkeysGallery = ({ setVisible1 }) => {
           img: mon.img,
           descr: mon.descr,
           attack: mon.attack,
-          count: 0,
+          ids: [],
         });
       }
 
-      groupedMap.get(key).count++;
+      groupedMap.get(key).ids.push(mon.id);
     });
 
   const grouped = Array.from(groupedMap.values());
 
   return (
     <div className="monkeyGallery">
-      <button className="close" onClick={() => setVisible1(false)}>
+      <button className="close" onClick={() => setGalleryVisible(false)}>
         X
       </button>
       {grouped.map((mon, index) => (
         <div className="monkeyCard" key={index}>
-          <p>{mon.level} level </p>
+          <div className="cover">
+            <p>{mon.level} level</p>{" "}
+            <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+              {mon.level == 0 && <div className="red">-5</div>}
+              {mon.level == 1 && <div className="red">-10</div>}
+              {mon.level > 1 && <div className="red">-{10 * mon.level}</div>}
+              <button disabled={currentUser.money < mon.level*10} className="ecip" onClick={() => equip(mon)}>
+                +1
+              </button>
+            </div>
+          </div>
           <div className="descr">
-            <p className="count">x{mon.count}</p>
+            <p className="count">x{mon.ids.length}</p>
 
             <h1>{mon.name}</h1>
 
@@ -50,7 +86,6 @@ export const MonkeysGallery = ({ setVisible1 }) => {
           </div>
         </div>
       ))}
-      <button className="ecip">Экипировать</button>
     </div>
   );
 };
