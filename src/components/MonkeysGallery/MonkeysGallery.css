@@ -4,12 +4,45 @@
   z-index: 30000;
   background-color: white;
   border: 1.5px solid black;
-  padding: 60px 70px;
+  padding: 90px 70px 60px 70px;
   display: flex;
   right: 60px;
   font-size: 16px;
   gap: 20px;
-  min-width: 70vw;
+  top: 5%;
+  min-width: 95vw ;
+  max-width: 95vw;
+  max-height: 90vh;
+  min-height: 90vh;
+  
+}
+
+
+
+.monkeys_cards::-webkit-scrollbar {
+  background-color: black;
+}
+
+.monkeys_cards::-webkit-scrollbar-thumb {
+  background-color: rgb(255, 0, 0);
+}
+.monkeyGallery .monkeyCard {
+  max-width: 30%;
+  position: relative;
+  /* max-height: 30%; */
+
+}
+
+.monkeys_cards {
+  width: 100%;
+  /* min-height: fit-content; */
+  max-height: 55vh;
+  display: flex;
+  /* align-items: center; */
+  justify-content: start;
+  overflow-y: scroll;
+  flex-wrap: wrap;
+  gap: 3vw;
 }
 
 .monkeyGallery .close {
@@ -18,6 +51,9 @@
   padding: 10px;
   margin-left: -5vw;
   width: fit-content;
+  align-self: center;
+  position: fixed;
+  height: 50vh;
 }
 
 
@@ -33,7 +69,7 @@ border: 1.5px solid black;
 }
 
 .monkeyGallery .monkeyCard img {
-  width: 70px;
+  width: 100px;
 }
 
 .monkeyGallery .ecip {
@@ -65,4 +101,31 @@ border: 1.5px solid black;
   background-color: rgb(214, 214, 214);
   border-color: rgb(175, 175, 175);
   cursor: not-allowed;
+}
+
+.monkeyGallery .title {
+  position:absolute;
+  top: 10px;
+  font-weight: 900;
+  font-size: 24px;
+  left: 20px;
+}
+
+.upgradeAnim {
+  animation: upgradeAnim 1s;
+  position: absolute;
+  left: 35%;
+  font-size: 30px;
+}
+
+@keyframes upgradeAnim {
+  0% {
+    transform: scale(0.5);
+    color: white;
+  }
+  100% {
+    transform: scale(2);
+  color: rgb(255, 0, 0);
+  }
+  
 }

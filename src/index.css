@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Pixelify+Sans:wght@400..700&family=Tiny5&family=VT323&display=swap');
+
 ::root {
   --button-color: green;
   
@@ -7,7 +9,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: monospace;
+  font-family: 'DotGothic16';
   transition: all .2s;
 }
 
@@ -16,6 +18,7 @@ body{
   position: relative;
   height: 100vh;
   width: 100vw;
+  /* overflow-y: auto; */
 }
 
 body::-webkit-scrollbar {

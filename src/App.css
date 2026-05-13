@@ -1,10 +1,11 @@
 .scene {
   display: flex;
-  gap: 60px;
+  gap: 10vw;
   align-self: center;
-  height: 90vh;
+  height: 80vh;
   justify-self: center;
 }
+
 
 .indicators {
   display: flex;
@@ -12,4 +13,18 @@
   position: fixed;
   width: 90vw;
   font-size: 24px;
+}
+
+.startBattle {
+  background-color: black;
+  color: white;
+  padding: 10px 40px;
+  align-self: flex-end;
+  border: 1.5px solid black;
+}
+
+.startBattle:hover {
+  background-color: white;
+  color: rgb(0, 0, 0);
+
 }
